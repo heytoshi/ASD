@@ -44,7 +44,8 @@ public class Main {
 
     public static void printUpcoming(List<Employee> employees) throws  JsonProcessingException {
         LocalDate today = LocalDate.now();
-        LocalDate nextMonthLastDay = today.plusMonths(2).minusDays(2);
+        LocalDate nextMonthFirstDay = today.plusMonths(1).withDayOfMonth(1);
+        LocalDate nextMonthLastDay = nextMonthFirstDay.plusMonths(1).minusDays(1);
 
         List<Employee> eligibleEmployees = new ArrayList<>();
         for (Employee employee : employees) {
