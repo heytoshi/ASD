@@ -1,0 +1,12 @@
+- The system should allow managers to login.
+- The system should allow managers to enroll new patients with their personal information.
+- The system should allow managers to schedule appointments for patients. 
+- The system should allow managers to send confirmation emails.
+- The system should allow managers to view appointments.
+- The system should allow managers to manage information about surgery locations.
+- The system should allow dentists to log in.
+- The system should allow dentists to check their appointments and details of patients they'll be seeing.
+- The system should allow patients to log in and see their appointments and details of dentists they'll be meeting.
+- The system should allow patients to request changes or cancellations for appointments.
+- The system should allow patients to prevent requesting new appointments if they have an unpaid bill.
+- The system should allow patients to pay.
