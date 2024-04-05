@@ -9,7 +9,7 @@ public class main {
 
 
     public static void main(String[] args) throws JsonProcessingException {
-        Contact contact = new Contact("Tsogt", "Enkhbat", "TestCompany", "Front-End Developer");
+        Contact contact = new Contact(1, "Tsogt", "Enkhbat", "TestCompany", "Front-End Developer");
         contact.addPhone(new PhoneNumber("641-555-9898", "Home"));
         contact.addPhone(new PhoneNumber("801-555-9999", "Work"));
         contact.addEmail(new Email("home.email@gmail.com", "Home"));
