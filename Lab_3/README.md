@@ -32,8 +32,7 @@ IoC mean that the flow of control is controlled by a framework and Spring IoC co
 
 Example: The IoC container takes care of the injection at runtime when you configure a data source bean and inject it into a repository bean.
 
-![alt text](https://raw.githubusercontent.com/heytoshi/ASD/main/Lab_3/screenshots/diagram.png
-?raw=true)
+![alt text](https://raw.githubusercontent.com/heytoshi/ASD/main/Lab_3/screenshots/diagram.png?raw=true)
 
 
  
