@@ -2,6 +2,6 @@ The system will be used by people who are willing to exchange books with each ot
 
 If a user finds a book, they submit a request to borrow the book or exchange it. The system notifies the book owner of the request, and if it’s approved, the exchange will be initiated. Users can also write about their own interests on their profile, this will help other users to suggest a book that is more likely to peek the other users’ interest.
 
-The system should track the borrowing and lending history for each user, including details of books borrowed, lent, or exchanged, dates of transactions, and status (pending, approved, returned, etc.). Users should be able to view their transaction history and update their available books or preferences at any time.
+The system should track the borrowing and lending history for each user, including details of books borrowed, lent, or exchanged, dates of transactions, and status (pending, approved, returned). Users should be able to view their transaction history and update their available books or preferences at any time.
 
 To prevent less problems between transaction, a user cannot borrow more than 3 books at the same time. Additionally, the system should prevent users from requesting a new book if they haven’t resolved their previous transactions.
