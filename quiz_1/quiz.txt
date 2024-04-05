@@ -1,0 +1,15 @@
+Task 1.1
+1. The system should allow users to add new contacts with 
+first name, last name, company field, job field, zero or more phone numbers, zero or more email addresses.
+2. The system should allow users to update contact's 
+first name, last name, company field, job field, phone numbers and email addresses.
+3. The system should allow users to search users based on 
+first name, last name, company field, job field, phone numbers and email addresses.
+4. The system should allow to delete old contacts.
+5. The system should allow users to merge duplicate contacts without losing data.
+6. The system should allow each email to have an actual address field 
+and a label so that users can write something to indicate how it is related to the contact (like
+home, mobile, work, etc.).
+7. The system should allow each phone number to has a field for the number and
+a field for a label so that users can write something to indicate how it is related to the contact (like
+home, mobile, work, etc.).
