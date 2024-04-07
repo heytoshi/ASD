@@ -1,5 +1,5 @@
 Task 1.1
-1. The system should allow users to add new contacts with 
+1. The system should allow users to add new contacts with
 first name, last name, company field, job field, zero or more phone numbers, zero or more email addresses.
 2. The system should allow users to update contact's 
 first name, last name, company field, job field, phone numbers and email addresses.
