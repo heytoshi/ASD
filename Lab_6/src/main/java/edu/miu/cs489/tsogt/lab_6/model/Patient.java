@@ -1,6 +1,7 @@
 package edu.miu.cs489.tsogt.lab_6.model;
 
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,16 +17,24 @@ import java.util.List;
 @Table(name = "Patient")
 public class Patient {
     @Id
+    @Expose
     private String id;
+    @Expose
     private String firstName;
+    @Expose
     private String lastName;
+    @Expose
     private String contactPhoneNumber;
+    @Expose
     private String email;
+    @Expose
     private String dateOfBirth;
 
+    @Expose
     @OneToMany(mappedBy = "patient")
     private List<Appointment> appointmentList;
 
+    @Expose
     @OneToOne
     private Address address;
 
@@ -40,6 +49,7 @@ public class Patient {
         sb.append("email: " + email + "\n");
         sb.append("dateOfBirth: " + dateOfBirth + "\n");
         sb.append("address: " + address + "\n");
+        sb.append("appointmentList: " + appointmentList + "\n");
         return sb.toString();
     }
 }
