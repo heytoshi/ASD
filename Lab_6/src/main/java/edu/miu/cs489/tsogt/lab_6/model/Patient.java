@@ -29,20 +29,20 @@ public class Patient {
     @Expose
     private String dateOfBirth;
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "appointment_id")
     private List<Appointment> appointmentList;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "address_id", unique = true, nullable = true)
     @Expose
     private Address address;
 
-
-    @Override
-    public String toString() {
-        Gson gson = new GsonBuilder()
-                .excludeFieldsWithoutExposeAnnotation()
-                .setPrettyPrinting()
-                .create();
-        return gson.toJson(this);
-    }
+//    @Override
+//    public String toString() {
+//        Gson gson = new GsonBuilder()
+//                .excludeFieldsWithoutExposeAnnotation()
+//                .setPrettyPrinting()
+//                .create();
+//        return gson.toJson(this);
+//    }
 }

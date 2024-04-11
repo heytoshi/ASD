@@ -31,7 +31,6 @@ public class Lab6Application implements CommandLineRunner {
     }
 
     public static void main(String[] args) {
-
         SpringApplication.run(Lab6Application.class, args);
     }
 
