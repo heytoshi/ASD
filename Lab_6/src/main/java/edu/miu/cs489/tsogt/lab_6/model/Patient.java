@@ -39,7 +39,6 @@ public class Patient {
         sb.append("contactPhoneNumber: " + contactPhoneNumber + "\n");
         sb.append("email: " + email + "\n");
         sb.append("dateOfBirth: " + dateOfBirth + "\n");
-        //sb.append("appointmentList: " + appointmentList + "\n");
         sb.append("address: " + address + "\n");
         return sb.toString();
     }

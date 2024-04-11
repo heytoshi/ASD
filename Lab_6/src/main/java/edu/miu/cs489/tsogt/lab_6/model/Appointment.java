@@ -12,7 +12,6 @@ public class Appointment {
     @Id
     private int id;
     @ManyToOne
-    @JoinColumn(name = "appointment_id", unique = false)
     private Patient patient;
     @ManyToOne
     private Dentist dentist;
