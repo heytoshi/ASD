@@ -76,7 +76,6 @@ public class DataLoader implements CommandLineRunner {
 
         appointmentRepository.saveAll(appointments);
 
-
         patient1.setAppointmentList(Arrays.asList(appointments.get(0)));
         patient2.setAppointmentList(Arrays.asList(appointments.get(1), appointments.get(4)));
         patient3.setAppointmentList(Arrays.asList(appointments.get(2), appointments.get(3)));

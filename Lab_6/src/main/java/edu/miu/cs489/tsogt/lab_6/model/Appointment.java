@@ -3,8 +3,6 @@ package edu.miu.cs489.tsogt.lab_6.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,5 +19,6 @@ public class Appointment {
     private Surgery surgery;
     private String appointmentDate;
     private Double appointmentTime;
+
 
 }

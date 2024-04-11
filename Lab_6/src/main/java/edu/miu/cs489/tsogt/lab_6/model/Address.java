@@ -1,5 +1,6 @@
 package edu.miu.cs489.tsogt.lab_6.model;
 
+import com.google.gson.Gson;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -20,4 +21,11 @@ public class Address {
     private String city;
     private String state;
     private String postalCode;
+
+    @Override
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+    }
+
 }
