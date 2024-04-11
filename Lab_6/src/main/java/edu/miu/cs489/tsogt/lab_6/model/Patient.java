@@ -17,24 +17,15 @@ import java.util.List;
 @Table(name = "Patient")
 public class Patient {
     @Id
-    @Expose
     private String id;
-    @Expose
     private String firstName;
-    @Expose
     private String lastName;
-    @Expose
     private String contactPhoneNumber;
-    @Expose
     private String email;
-    @Expose
     private String dateOfBirth;
 
-    @Expose
     @OneToMany(mappedBy = "patient")
     private List<Appointment> appointmentList;
-
-    @Expose
     @OneToOne
     private Address address;
 
