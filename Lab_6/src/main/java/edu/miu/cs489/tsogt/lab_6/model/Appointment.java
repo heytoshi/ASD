@@ -3,6 +3,8 @@ package edu.miu.cs489.tsogt.lab_6.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

@@ -24,4 +24,5 @@ public class Dentist {
 
     @OneToMany
     private List<Appointment> appointments;
+
 }

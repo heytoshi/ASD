@@ -1,16 +1,13 @@
 package edu.miu.cs489.tsogt.lab_6;
 
-import edu.miu.cs489.tsogt.lab_6.model.Appointment;
-import edu.miu.cs489.tsogt.lab_6.model.Dentist;
-import edu.miu.cs489.tsogt.lab_6.model.Patient;
-import edu.miu.cs489.tsogt.lab_6.model.Surgery;
-import edu.miu.cs489.tsogt.lab_6.repository.AppointmentRepository;
-import edu.miu.cs489.tsogt.lab_6.repository.DentistRepository;
-import edu.miu.cs489.tsogt.lab_6.repository.PatientRepository;
-import edu.miu.cs489.tsogt.lab_6.repository.SurgeryRepository;
+import edu.miu.cs489.tsogt.lab_6.model.*;
+import edu.miu.cs489.tsogt.lab_6.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -18,119 +15,84 @@ public class DataLoader implements CommandLineRunner {
     private final PatientRepository patientRepository;
     private final AppointmentRepository appointmentRepository;
     private final SurgeryRepository surgeryRepository;
+    private final AddressRepository addressRepository;
 
     @Autowired
     public DataLoader(DentistRepository dentistRepository,
                       PatientRepository patientRepository,
                       AppointmentRepository appointmentRepository,
-                      SurgeryRepository surgeryRepository) {
+                      SurgeryRepository surgeryRepository,
+                      AddressRepository addressRepository) {
         this.dentistRepository = dentistRepository;
         this.patientRepository = patientRepository;
         this.appointmentRepository = appointmentRepository;
         this.surgeryRepository = surgeryRepository;
+        this.addressRepository = addressRepository;
     }
     @Override
     public void run(String... args) throws Exception {
-        Dentist dentist1 = new Dentist();
-        dentist1.setFirstName("Tony");
-        dentist1.setLastName("Smith");
-        dentistRepository.save(dentist1);
 
-        Dentist dentist2 = new Dentist();
-        dentist2.setFirstName("Helen");
-        dentist2.setLastName("Pearson");
-        dentistRepository.save(dentist2);
+        Address address1 = new Address(1, "123 Main St", "New York", "NY", "10001");
+        Address address2 = new Address(2, "456 Park Ave", "Los Angeles", "CA", "90001");
+        Address address3 = new Address(3, "789 Broadway", "Chicago", "IL", "60601");
+        Address address4 = new Address(4, "101 Elm St", "Houston", "TX", "77001");
+        Address address5 = new Address(5, "202 Cedar Ln", "Phoenix", "AZ", "85001");
+        Address address6 = new Address(6, "303 Pine Rd", "Philadelphia", "PA", "19101");
+        Address address7 = new Address(7, "404 Willow Ave", "San Antonio", "TX", "78201");
 
-        Dentist dentist3 = new Dentist();
-        dentist3.setFirstName("Robin");
-        dentist3.setLastName("Plevin");
-        dentistRepository.save(dentist3);
+        addressRepository.saveAll(Arrays.asList(address1, address2, address3, address4, address5, address6, address7));
 
-
-        Patient patient1 = new Patient();
-        patient1.setId("P100");
-        patient1.setFirstName("Gillian");
-        patient1.setLastName("White");
-        patientRepository.save(patient1);
-
-        Patient patient2 = new Patient();
-        patient2.setId("P105");
-        patient2.setFirstName("Jill");
-        patient2.setLastName("Bell");
-        patientRepository.save(patient2);
-
-        Patient patient3 = new Patient();
-        patient3.setId("P108");
-        patient3.setFirstName("Ian");
-        patient3.setLastName("MacKay");
-        patientRepository.save(patient3);
-
-        Patient patient4 = new Patient();
-        patient4.setId("P110");
-        patient4.setFirstName("John");
-        patient4.setLastName("Walker");
-        patientRepository.save(patient4);
-
-        Surgery surgery1 = new Surgery();
-        surgery1.setId("S15");
-        surgeryRepository.save(surgery1);
-
-        Surgery surgery2 = new Surgery();
-        surgery2.setId("S10");
-        surgeryRepository.save(surgery2);
-
-        Surgery surgery3 = new Surgery();
-        surgery3.setId("S13");
-        surgeryRepository.save(surgery3);
-
-        Appointment appointment1 = new Appointment();
-        appointment1.setDentist(dentist1);
-        appointment1.setPatient(patient1);
-        appointment1.setSurgery(surgery1);
-        appointment1.setAppointmentDate("12-Sep-13");
-        appointment1.setAppointmentTime(10.00);
-        appointmentRepository.save(appointment1);
+        Dentist dentist1 = new Dentist(1, "Tony", "Smith", "123-456-7890", "tony.smith@gmail.com", "Spec1", null);
+        Dentist dentist2 = new Dentist(2, "Helen", "Pearson", "123-123-7890", "helen.pearson@gmail.com", "Spec2", null);
+        Dentist dentist3 = new Dentist(3, "Robin", "Plevin", "123-789-7810", "robin.plevin@gmail.com", "Spec3",null);
 
 
-        Appointment appointment2 = new Appointment();
-        appointment2.setDentist(dentist1);
-        appointment2.setPatient(patient2);
-        appointment2.setSurgery(surgery1);
-        appointment2.setAppointmentDate("12-Sep-13");
-        appointment2.setAppointmentTime(12.00);
-        appointmentRepository.save(appointment2);
+        dentistRepository.saveAll(Arrays.asList(dentist1, dentist2, dentist3));
 
-        Appointment appointment3 = new Appointment();
-        appointment3.setDentist(dentist2);
-        appointment3.setPatient(patient3);
-        appointment3.setSurgery(surgery2);
-        appointment3.setAppointmentDate("12-Sep-13");
-        appointment3.setAppointmentTime(10.00);
-        appointmentRepository.save(appointment3);
 
-        Appointment appointment4 = new Appointment();
-        appointment4.setDentist(dentist2);
-        appointment4.setPatient(patient3);
-        appointment4.setSurgery(surgery2);
-        appointment4.setAppointmentDate("14-Sep-13");
-        appointment4.setAppointmentTime(14.00);
-        appointmentRepository.save(appointment4);
+        Patient patient1 = new Patient("P100", "Gillian", "White", "987-654-3210", "gillian.white@gmail.com", "01-Sep-1999", null, address1);
+        Patient patient2 = new Patient("P105", "Jill", "Bell", "431-231-5412", "jill.bell@gmail.com", "01-Oct-1999", null,address2);
+        Patient patient3 = new Patient("P108", "Ian", "MackKay", "902-231-5412", "ian.bmackey@gmail.com", "01-Oct-1999", null, address3);
+        Patient patient4 = new Patient("P110", "John", "Walker", "202-431-5412", "john.walker@gmail.com", "01-Oct-1989", null, address4);
 
-        Appointment appointment5 = new Appointment();
-        appointment5.setDentist(dentist3);
-        appointment5.setPatient(patient2);
-        appointment5.setSurgery(surgery1);
-        appointment5.setAppointmentDate("14-Sep-13");
-        appointment5.setAppointmentTime(16.30);
-        appointmentRepository.save(appointment5);
+        patientRepository.saveAll(Arrays.asList(patient1, patient2, patient3, patient4));
 
-        Appointment appointment6 = new Appointment();
-        appointment6.setDentist(dentist3);
-        appointment6.setPatient(patient4);
-        appointment6.setSurgery(surgery3);
-        appointment6.setAppointmentDate("15-Sep-13");
-        appointment6.setAppointmentTime(18.00);
-        appointmentRepository.save(appointment6);
+
+        Surgery surgery1 = new Surgery("S15", "Clinic One", "432-231-6809", null, address5);
+        Surgery surgery2 = new Surgery("S10", "Clinic Two", "432-231-6129", null, address6);
+        Surgery surgery3 = new Surgery("S13", "Clinic Three", "432-231-6309", null, address7);
+
+
+        surgeryRepository.saveAll(Arrays.asList(surgery1, surgery2, surgery3));
+
+        List<Appointment> appointments = Arrays.asList(
+                new Appointment(1, patient1, dentist1, surgery1, "12-Sep-13", 10.00),
+                new Appointment(2, patient2, dentist1, surgery1, "12-Sep-13", 12.00),
+                new Appointment(3, patient3, dentist2, surgery2, "12-Sep-13", 10.00),
+                new Appointment(4, patient3, dentist2, surgery2, "14-Sep-13", 14.00),
+                new Appointment(5, patient2, dentist3, surgery1, "14-Sep-13", 16.30),
+                new Appointment(6, patient4, dentist3, surgery3, "15-Sep-13", 18.00)
+        );
+
+        appointmentRepository.saveAll(appointments);
+
+
+        patient1.setAppointmentList(Arrays.asList(appointments.get(0)));
+        patient2.setAppointmentList(Arrays.asList(appointments.get(1), appointments.get(4)));
+        patient3.setAppointmentList(Arrays.asList(appointments.get(2), appointments.get(3)));
+        patient4.setAppointmentList(Arrays.asList(appointments.get(5)));
+
+        dentist1.setAppointments(Arrays.asList(appointments.get(0), appointments.get(1)));
+        dentist2.setAppointments(Arrays.asList(appointments.get(2), appointments.get(3)));
+        dentist3.setAppointments(Arrays.asList(appointments.get(4), appointments.get(5)));
+
+        surgery1.setAppointments(Arrays.asList(appointments.get(0), appointments.get(1), appointments.get(4)));
+        surgery2.setAppointments(Arrays.asList(appointments.get(2), appointments.get(3)));
+        surgery3.setAppointments(Arrays.asList(appointments.get(5)));
+
+        patientRepository.saveAll(Arrays.asList(patient1, patient2, patient3, patient4));
+        dentistRepository.saveAll(Arrays.asList(dentist1, dentist2, dentist3));
+        surgeryRepository.saveAll(Arrays.asList(surgery1, surgery2, surgery3));
 
     }
 }

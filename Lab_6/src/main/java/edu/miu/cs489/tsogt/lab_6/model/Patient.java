@@ -20,12 +20,11 @@ public class Patient {
     private String lastName;
     private String contactPhoneNumber;
     private String email;
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     @OneToMany
     private List<Appointment> appointmentList;
 
     @OneToOne
     private Address address;
-
 }
