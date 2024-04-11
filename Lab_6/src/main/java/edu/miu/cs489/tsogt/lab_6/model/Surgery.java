@@ -21,7 +21,7 @@ public class Surgery {
     private String name;
     private String telephoneNumber;
 
-    @OneToMany
+    @OneToMany(mappedBy = "surgery")
     private List<Appointment> appointments;
 
     @OneToOne

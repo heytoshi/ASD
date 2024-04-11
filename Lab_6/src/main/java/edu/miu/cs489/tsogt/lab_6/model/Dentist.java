@@ -25,7 +25,7 @@ public class Dentist {
     private String email;
     private String specialization;
 
-    @OneToMany
+    @OneToMany(mappedBy = "dentist")
     private List<Appointment> appointments;
 
     @Override

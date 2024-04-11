@@ -23,7 +23,7 @@ public class Patient {
     private String email;
     private String dateOfBirth;
 
-    @OneToMany
+    @OneToMany(mappedBy = "patient")
     private List<Appointment> appointmentList;
 
     @OneToOne
@@ -39,7 +39,7 @@ public class Patient {
         sb.append("contactPhoneNumber: " + contactPhoneNumber + "\n");
         sb.append("email: " + email + "\n");
         sb.append("dateOfBirth: " + dateOfBirth + "\n");
-       // sb.append("appointmentList: " + appointmentList + "\n");
+        //sb.append("appointmentList: " + appointmentList + "\n");
         sb.append("address: " + address + "\n");
         return sb.toString();
     }

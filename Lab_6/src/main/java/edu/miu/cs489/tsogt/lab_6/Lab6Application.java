@@ -48,7 +48,6 @@ public class Lab6Application implements CommandLineRunner {
         patientService.addPatient(patient);
         patientService.deletePatient(patient);
 
-
         List<Patient> list = patientService.getPatients();
         for(Patient p: list) {
             System.out.println(p);
