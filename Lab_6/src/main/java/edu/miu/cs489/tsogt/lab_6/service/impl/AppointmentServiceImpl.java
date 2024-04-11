@@ -5,6 +5,7 @@ import edu.miu.cs489.tsogt.lab_6.repository.AppointmentRepository;
 import edu.miu.cs489.tsogt.lab_6.service.AppointmentService;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service

@@ -10,11 +10,11 @@ import java.util.List;
 @Service
 public class SurgeryServiceImpl implements SurgeryService {
 
-        private SurgeryRepository surgeryRepository;
+    private SurgeryRepository surgeryRepository;
 
-        public SurgeryServiceImpl(SurgeryRepository surgeryRepository) {
-            this.surgeryRepository = surgeryRepository;
-        }
+    public SurgeryServiceImpl(SurgeryRepository surgeryRepository) {
+        this.surgeryRepository = surgeryRepository;
+    }
 
     @Override
     public List<Surgery> findAll() {

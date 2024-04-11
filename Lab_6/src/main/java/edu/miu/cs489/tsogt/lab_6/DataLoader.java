@@ -29,6 +29,7 @@ public class DataLoader implements CommandLineRunner {
         this.surgeryRepository = surgeryRepository;
         this.addressRepository = addressRepository;
     }
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -44,14 +45,14 @@ public class DataLoader implements CommandLineRunner {
 
         Dentist dentist1 = new Dentist(1, "Tony", "Smith", "123-456-7890", "tony.smith@gmail.com", "Spec1", null);
         Dentist dentist2 = new Dentist(2, "Helen", "Pearson", "123-123-7890", "helen.pearson@gmail.com", "Spec2", null);
-        Dentist dentist3 = new Dentist(3, "Robin", "Plevin", "123-789-7810", "robin.plevin@gmail.com", "Spec3",null);
+        Dentist dentist3 = new Dentist(3, "Robin", "Plevin", "123-789-7810", "robin.plevin@gmail.com", "Spec3", null);
 
 
         dentistRepository.saveAll(Arrays.asList(dentist1, dentist2, dentist3));
 
 
         Patient patient1 = new Patient("P100", "Gillian", "White", "987-654-3210", "gillian.white@gmail.com", "01-Sep-1999", null, address1);
-        Patient patient2 = new Patient("P105", "Jill", "Bell", "431-231-5412", "jill.bell@gmail.com", "01-Oct-1999", null,address2);
+        Patient patient2 = new Patient("P105", "Jill", "Bell", "431-231-5412", "jill.bell@gmail.com", "01-Oct-1999", null, address2);
         Patient patient3 = new Patient("P108", "Ian", "MackKay", "902-231-5412", "ian.bmackey@gmail.com", "01-Oct-1999", null, address3);
         Patient patient4 = new Patient("P110", "John", "Walker", "202-431-5412", "john.walker@gmail.com", "01-Oct-1989", null, address4);
 

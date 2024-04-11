@@ -1,12 +1,8 @@
 package edu.miu.cs489.tsogt.lab_6.model;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -31,13 +27,14 @@ public class Dentist {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Dentist{");
-        sb.append("id=").append(id);
-        sb.append(", firstName='").append(firstName).append('\'');
-        sb.append(", lastName='").append(lastName).append('\'');
-        sb.append(", contactPhoneNumber='").append(contactPhoneNumber).append('\'');
-        sb.append(", email='").append(email).append('\'');
-        sb.append(", specialization='").append(specialization).append('\'');
+        sb.append("{\n");
+        sb.append("  \"id\": ").append(id).append(",\n");
+        sb.append("  \"firstName\": \"").append(firstName).append("\",\n");
+        sb.append("  \"lastName\": \"").append(lastName).append("\",\n");
+        sb.append("  \"contactPhoneNumber\": \"").append(contactPhoneNumber).append("\",\n");
+        sb.append("  \"email\": \"").append(email).append("\",\n");
+        sb.append("  \"specialization\": \"").append(specialization).append("\"\n");
+        sb.append("}");
         return sb.toString();
     }
 }

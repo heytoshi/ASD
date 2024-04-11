@@ -1,8 +1,5 @@
 package edu.miu.cs489.tsogt.lab_6.model;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,11 +27,12 @@ public class Surgery {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Surgery{");
-        sb.append("id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", telephoneNumber=").append(telephoneNumber);
-        sb.append(", address=").append(address);
+        sb.append("{\n");
+        sb.append("  \"id\": ").append(id).append(",\n");
+        sb.append("  \"name\": \"").append(name).append("\",\n");
+        sb.append("  \"telephoneNumber\": \"").append(telephoneNumber).append("\",\n");
+        sb.append("  \"address\": ").append(address).append("\n");
+        sb.append("}");
         return sb.toString();
     }
 }

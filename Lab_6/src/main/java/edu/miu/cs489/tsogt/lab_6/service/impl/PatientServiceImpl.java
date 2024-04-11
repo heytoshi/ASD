@@ -18,7 +18,6 @@ public class PatientServiceImpl implements PatientService {
         this.patientRepository = patientRepository;
     }
 
-
     @Override
     public List<Patient> getPatients() {
         return patientRepository.findAll();
