@@ -66,4 +66,9 @@ public class Main {
         }
         System.out.println("]");
     }
+
+    Collections.sort(employees, Comparator.comparing(Employee::getLastName)
+            .thenComparing(Comparator.comparing(Employee::getYearlySalary).reversed()));
+
+
 }
