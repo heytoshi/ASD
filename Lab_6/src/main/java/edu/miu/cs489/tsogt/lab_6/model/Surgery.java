@@ -17,25 +17,24 @@ import java.util.List;
 @Table(name = "Surgery")
 public class Surgery {
     @Id
-    @Expose
     private String id;
-    @Expose
     private String name;
-    @Expose
     private String telephoneNumber;
 
     @OneToMany
     private List<Appointment> appointments;
 
-    @Expose
     @OneToOne
     private Address address;
 
     @Override
     public String toString() {
-        Gson gson = new GsonBuilder()
-                .excludeFieldsWithoutExposeAnnotation()
-                .create();
-        return gson.toJson(this);
+        StringBuilder sb = new StringBuilder();
+        sb.append("Surgery{");
+        sb.append("id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append(", telephoneNumber=").append(telephoneNumber);
+        sb.append(", address=").append(address);
+        return sb.toString();
     }
 }

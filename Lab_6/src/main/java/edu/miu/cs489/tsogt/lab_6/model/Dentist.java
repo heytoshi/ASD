@@ -18,17 +18,11 @@ import java.util.List;
 @Table(name = "Dentist")
 public class Dentist {
     @Id
-    @Expose
     private int id;
-    @Expose
     private String firstName;
-    @Expose
     private String lastName;
-    @Expose
     private String contactPhoneNumber;
-    @Expose
     private String email;
-    @Expose
     private String specialization;
 
     @OneToMany
@@ -36,9 +30,14 @@ public class Dentist {
 
     @Override
     public String toString() {
-        Gson gson = new GsonBuilder()
-                .excludeFieldsWithoutExposeAnnotation()
-                .create();
-        return gson.toJson(this);
+        StringBuilder sb = new StringBuilder();
+        sb.append("Dentist{");
+        sb.append("id=").append(id);
+        sb.append(", firstName='").append(firstName).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", contactPhoneNumber='").append(contactPhoneNumber).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", specialization='").append(specialization).append('\'');
+        return sb.toString();
     }
 }

@@ -16,33 +16,31 @@ import java.util.List;
 @Table(name = "Patient")
 public class Patient {
     @Id
-    @Expose
     private String id;
-    @Expose
     private String firstName;
-    @Expose
     private String lastName;
-    @Expose
     private String contactPhoneNumber;
-    @Expose
     private String email;
-    @Expose
     private String dateOfBirth;
 
-    @OneToMany(mappedBy = "appointment_id")
+    @OneToMany
     private List<Appointment> appointmentList;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "address_id", unique = true, nullable = true)
-    @Expose
+    @OneToOne
     private Address address;
 
-//    @Override
-//    public String toString() {
-//        Gson gson = new GsonBuilder()
-//                .excludeFieldsWithoutExposeAnnotation()
-//                .setPrettyPrinting()
-//                .create();
-//        return gson.toJson(this);
-//    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Patient{");
+        sb.append("id: " + id + "\n");
+        sb.append("firstName: " + firstName + "\n");
+        sb.append("lastName: " + lastName + "\n");
+        sb.append("contactPhoneNumber: " + contactPhoneNumber + "\n");
+        sb.append("email: " + email + "\n");
+        sb.append("dateOfBirth: " + dateOfBirth + "\n");
+       // sb.append("appointmentList: " + appointmentList + "\n");
+        sb.append("address: " + address + "\n");
+        return sb.toString();
+    }
 }

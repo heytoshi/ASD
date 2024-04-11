@@ -24,8 +24,14 @@ public class Address {
 
     @Override
     public String toString() {
-        Gson gson = new Gson();
-        return gson.toJson(this);
+        StringBuilder sb = new StringBuilder();
+        sb.append("Address{");
+        sb.append("id=").append(id);
+        sb.append(", streetAddress='").append(streetAddress).append('\'');
+        sb.append(", city='").append(city).append('\'');
+        sb.append(", state='").append(state).append('\'');
+        sb.append(", postalCode='").append(postalCode).append('\'');
+        return sb.toString();
     }
 
 }
