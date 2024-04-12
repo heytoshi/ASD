@@ -1,11 +1,7 @@
 package edu.miu.cs489.tsogt.lab_6;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import edu.miu.cs489.tsogt.lab_6.model.*;
 import edu.miu.cs489.tsogt.lab_6.service.*;
-import org.hibernate.Hibernate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
