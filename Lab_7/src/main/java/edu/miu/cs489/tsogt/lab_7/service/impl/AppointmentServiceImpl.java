@@ -1,8 +1,8 @@
-package edu.miu.cs489.tsogt.lab_6.service.impl;
+package edu.miu.cs489.tsogt.lab_7.service.impl;
 
-import edu.miu.cs489.tsogt.lab_6.model.Appointment;
-import edu.miu.cs489.tsogt.lab_6.repository.AppointmentRepository;
-import edu.miu.cs489.tsogt.lab_6.service.AppointmentService;
+import edu.miu.cs489.tsogt.lab_7.model.Appointment;
+import edu.miu.cs489.tsogt.lab_7.repository.AppointmentRepository;
+import edu.miu.cs489.tsogt.lab_7.service.AppointmentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

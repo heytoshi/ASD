@@ -2,7 +2,6 @@ package edu.miu.cs489.tsogt.lab_6.service;
 
 import edu.miu.cs489.tsogt.lab_6.model.Patient;
 
-import javax.swing.*;
 import java.util.List;
 
 public interface PatientService {
