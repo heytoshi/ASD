@@ -9,6 +9,7 @@ import edu.miu.cs489.tsogt.lab_7.repository.PatientRepository;
 import edu.miu.cs489.tsogt.lab_7.service.AddressService;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,6 +48,7 @@ public class AddressServiceImpl implements AddressService {
                                 patient.getDateOfBirth()
                         )
                 ))
+                .sorted(Comparator.comparing(AddressResponse::city))
                 .collect(Collectors.toList());
     }
 }
