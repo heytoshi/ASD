@@ -1,16 +1,4 @@
 services:
-  spring-app:
-    image: lab_10:latest
-    ports:
-      - "8080:8080"
-    depends_on:
-      - mysql-db
-    networks:
-      - mynetwork
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3307/ASD
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: test1234
 
   mysql-db:
     image: mysql:latest
@@ -22,6 +10,19 @@ services:
       - mysql-data:/var/lib/mysql
     networks:
       - mynetwork
+
+  spring-app:
+    image: lab_10:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db
+    networks:
+      - mynetwork
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3307/ASD?allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: test1234
 
 networks:
   mynetwork:
