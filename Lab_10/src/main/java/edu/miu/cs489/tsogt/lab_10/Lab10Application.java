@@ -15,8 +15,8 @@ public class Lab10Application {
     CommandLineRunner commandLineRunner() {
         return (args) -> {
             System.out.println("Hello RESTful Web API");
-            System.out.println("Lab_7 WebAPI server. Starting...");
-            System.out.println("Lab_7 WebAPI server. Started.\nRunning Apache Tomcat service and Listening for HTTP Request on Port number, 8080");
+            System.out.println("Lab_10 WebAPI server. Starting...");
+            System.out.println("Lab_10 WebAPI server. Started.\nRunning Apache Tomcat service and Listening for HTTP Request on Port number, 8080");
         };
     }
 }
