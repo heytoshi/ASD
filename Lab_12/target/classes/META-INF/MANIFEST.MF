@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: edu.miu.cs489.tsogt.lab_7.Lab7Application
-

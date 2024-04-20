@@ -9,14 +9,19 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.miu.cs489.tsogt</groupId>
-    <artifactId>Lab_7</artifactId>
+    <artifactId>Lab_12</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Lab_7</name>
-    <description>Lab_7</description>
+    <name>Lab_12</name>
+    <description>Lab_12</description>
     <properties>
         <java.version>21</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.6.1.jre11</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
